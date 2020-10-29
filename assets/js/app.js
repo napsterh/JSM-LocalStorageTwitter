@@ -1,23 +1,24 @@
 
 
 //Variables
-const listaTweets = document.getElementById('lista-tweets');
+const formulario = document.querySelector('#formulario');
+const listaTweets = document.querySelector('#lista-tweets');
 
 // Event listeners
 eventListener();
 
 function eventListener() {
     //cuando se envia al formulario
-    document.querySelector('#formulario').addEventListener('submit', agregarTweet);
+    formulario.addEventListener('submit', agregarTweet);
 
-    //Borrar  tweet
-    listaTweets.addEventListener('click', borrarTweet);
+    // //Borrar  tweet
+    // listaTweets.addEventListener('click', borrarTweet);
 
-    //Contenido cargado
-    document.addEventListener('DOMContentLoaded', localStorageListo);
+    // //Contenido cargado
+    // document.addEventListener('DOMContentLoaded', localStorageListo);
 
-    //Borrar  tweet
-    document.addEventListener('submit', borrarCampo);
+    // //Borrar  tweet
+    // document.addEventListener('submit', borrarCampo);
 }
 
 
@@ -26,23 +27,24 @@ function eventListener() {
 
 function agregarTweet(e) {
     e.preventDefault();
-    // Leer valor de text area
-    const tweet = document.getElementById('tweet').value;
-        //Crear boton para eliminar
-        const botonBorrar = document.createElement('a');
-        botonBorrar.classList = 'borrar-tweet';
-        botonBorrar.innerText = 'X';
 
-        //Crear elemento y añadirle el contenido a la lista
-        const li = document.createElement('li');
-        li.innerText = tweet;
-        //Añade el boton de borrar el tweet
-        li.appendChild(botonBorrar);
-        //Añade el tweet a la lista
-        listaTweets.appendChild(li);
+    // // Leer valor de text area
+    // const tweet = document.getElementById('tweet').value;
+    //     //Crear boton para eliminar
+    //     const botonBorrar = document.createElement('a');
+    //     botonBorrar.classList = 'borrar-tweet';
+    //     botonBorrar.innerText = 'X';
 
-        //Añadir a local storage
-        agregarTweetLocalStorage(tweet);
+    //     //Crear elemento y añadirle el contenido a la lista
+    //     const li = document.createElement('li');
+    //     li.innerText = tweet;
+    //     //Añade el boton de borrar el tweet
+    //     li.appendChild(botonBorrar);
+    //     //Añade el tweet a la lista
+    //     listaTweets.appendChild(li);
+
+    //     //Añadir a local storage
+    //     agregarTweetLocalStorage(tweet);
 }
 
 //Elimina el tweet
