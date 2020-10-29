@@ -3,6 +3,7 @@
 //Variables
 const formulario = document.querySelector('#formulario');
 const listaTweets = document.querySelector('#lista-tweets');
+let tweet = [];
 
 // Event listeners
 eventListener();
@@ -29,7 +30,16 @@ function agregarTweet(e) {
     e.preventDefault();
 
     // // Leer valor de text area
-    // const tweet = document.getElementById('tweet').value;
+    const tweet = document.querySelector('#tweet').value;
+    console.log(tweet)
+
+    //Validacion
+    if(tweet === ''){
+        mostrarError('Un mensaje no puede ir vacio')
+        return; //Evita que ejecute mas lineas de codigo
+    }
+    console.log('registrado')
+
     //     //Crear boton para eliminar
     //     const botonBorrar = document.createElement('a');
     //     botonBorrar.classList = 'borrar-tweet';
@@ -45,6 +55,23 @@ function agregarTweet(e) {
 
     //     //Añadir a local storage
     //     agregarTweetLocalStorage(tweet);
+}
+
+//Mostrar mensaje de error
+
+function mostrarError(error){
+    const mensajeError = document.createElement('p');
+    mensajeError.textContent = error;
+    mensajeError.classList.add('error');
+
+    //Insertarlo en el contenido
+    const contenido = document.querySelector('#contenido')
+    contenido.appendChild(mensajeError);
+
+    //Elimina la alerta despues de 3 segundos
+    setTimeout(() => {
+        mensajeError.remove();
+    }, 3000);
 }
 
 //Elimina el tweet
