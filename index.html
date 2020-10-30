@@ -8,28 +8,43 @@
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/skeleton.css">
     <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 </head>
 <body>
 
     <div id="contenido">
         <div class="container">
-
-            <h1>Local Storage</h1>
+            <div class="menu">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <h3>Local Storage Twitter</h3>
+            <hr>
             <div class="row">
                 <div class="six columns">
-                    <label for="tweet">Tweet:</label>
-                    <form action="#" id="formulario">
+                    <img class="avatar" src="assets/img/rusia.jpg" alt="rusia">
+                    <form action="#" id="formulario" class="formulario">
                             <label for="tweet"></label>
-                            <textarea id="tweet" class="u-full-width"></textarea>
-                            <input type="submit" class="button u-full-width button-primary" value="Agregar">
+                            <textarea id="tweet" class="u-full-width" placeholder="¿Que estas pensando?"></textarea>
+                            <input type="submit" class="button u-full-width button-primary" value="Twittear">
                     </form>
                 </div>
                 <div class="six columns">
+                    <div class="mundo">
+                        <i class="fas fa-globe-americas"></i>
+                        <h6>Cualquier persona puede responder</h6>
+                    </div>
+                    <div class="config">
+                        <i class="fas fa-images"></i>
+                        <i class="fas fa-video"></i>
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                </div>
+                <div class="twitts columns">
                     <h2>Mis Tweets</h2>
                     <div id="lista-tweets"></div>
                 </div>
             </div>
-
         </div>
     </div> <!--#contenido-->
 
