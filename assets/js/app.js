@@ -13,13 +13,13 @@ function eventListener() {
     formulario.addEventListener('submit', agregarTweet);
 
     // //Borrar  tweet
-    // listaTweets.addEventListener('click', borrarTweet);
+    listaTweets.addEventListener('click', borrarTweet);
 
-    // //Contenido cargado
-    // document.addEventListener('DOMContentLoaded', localStorageListo);
+    //Contenido cargado
+    document.addEventListener('DOMContentLoaded', localStorageListo);
 
-    // //Borrar  tweet
-    // document.addEventListener('submit', borrarCampo);
+    //Borrar  tweet
+    document.addEventListener('submit', borrarCampo);
 }
 
 
