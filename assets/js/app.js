@@ -38,7 +38,9 @@ function agregarTweet(e) {
         mostrarError('Un mensaje no puede ir vacio')
         return; //Evita que ejecute mas lineas de codigo
     }
-    console.log('registrado')
+
+    tweets = [...tweets, tweet];
+    console.log(tweets)
 
     //     //Crear boton para eliminar
     //     const botonBorrar = document.createElement('a');
