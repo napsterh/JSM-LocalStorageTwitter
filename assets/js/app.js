@@ -91,7 +91,6 @@ function localStorageListo(){
     tweets = obtenerTweetsLocalStorage();
 
     //console.log(tweets);
-    
     tweets.forEach(function(tweet){
         //Crear boton para eliminar
         const botonBorrar = document.createElement('a');
