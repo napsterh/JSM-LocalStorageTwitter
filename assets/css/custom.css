@@ -52,6 +52,16 @@ h1, h2 {
     background-color: #1DA1F2 !important;
 }
 
+.container h3 {
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.container h6 {
+    color: #FFFFFF;
+    text-align: center;
+}
+
 @media screen and (max-width: 480px){
 
     
