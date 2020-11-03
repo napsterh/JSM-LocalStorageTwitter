@@ -3,7 +3,7 @@
 //Variables
 const formulario = document.querySelector('#formulario');
 const listaTweets = document.querySelector('#lista-tweets');
-let tweet = [];
+let tweets = [];
 
 // Event listeners
 eventListener();
@@ -31,7 +31,6 @@ function agregarTweet(e) {
 
     // // Leer valor de text area
     const tweet = document.querySelector('#tweet').value;
-    console.log(tweet)
 
     //Validacion
     if(tweet === ''){
@@ -39,16 +38,23 @@ function agregarTweet(e) {
         return; //Evita que ejecute mas lineas de codigo
     }
 
-    tweets = [...tweets, tweet];
-    console.log(tweets)
+    const tweetObj = {
+        id: Date.now(),
+        tweet
+    }
+
+    //Agregando el arreglo de tweets
+    tweets = [...tweets, tweetObj];
+
+    //Una vez agregado vamos a crear el HTML
+    crearHTML();
 
     //     //Crear boton para eliminar
     //     const botonBorrar = document.createElement('a');
     //     botonBorrar.classList = 'borrar-tweet';
     //     botonBorrar.innerText = 'X';
 
-    //     //Crear elemento y añadirle el contenido a la lista
-    //     const li = document.createElement('li');
+    //     
     //     li.innerText = tweet;
     //     //Añade el boton de borrar el tweet
     //     li.appendChild(botonBorrar);
@@ -58,6 +64,32 @@ function agregarTweet(e) {
     //     //Añadir a local storage
     //     agregarTweetLocalStorage(tweet);
 }
+
+    //Muetsra un listado de los tweets
+ function crearHTML(){
+
+    limpiarHTML();
+
+    if(tweets.length > 0){
+        tweets.forEach( tweet => {
+            //Crear el HTML
+
+            const li = document.createElement('li');
+            //Añadir el texto
+            li.innerText = tweet.tweet;
+
+            //Insertando en el HTML
+            listaTweets.appendChild(li);
+        });
+    }
+ }
+
+ //Limpiar elementos
+ function limpiarHTML() {
+     while( listaTweets.firstChild ){
+        listaTweets.removeChild(listaTweets.firstChild);
+     }
+ }
 
 //Mostrar mensaje de error
 
